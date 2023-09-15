@@ -1,7 +1,10 @@
 
-obj = node.o qsort.o
+obj = \
+  qsort.o \
+  node.o \
+  tree.o \
 
-tree: tree.f90 $(obj)
+test: test.f90 $(obj)
 	gfortran $(obj) -o $@ $<
 
 $(obj): %.o:%.f90
